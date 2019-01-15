@@ -54,28 +54,40 @@
    
 ?>
 
-<form action="" method="post">
-   <div class="field">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" value ="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
-   </div>
-   <div class="field">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password">
-   </div>
-   <div class="field">
-      <label for="password_again">Confirm Password</label>
-      <input type="password" name="password_again" id="password_again">
-   </div>
-   <div class="field">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" value = "<?php echo escape(Input::get('name')); ?>">
-   </div>
+<div class="container">
+   <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+         <div class="jumbotron">
+            <h1>Register</h1>
+            <form action="" method="post">
+               <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input type="text" class="form-control" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>"
+                     autocomplete="off" minlength="2" maxlength="20" required>
+               </div>
+               <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" name="password" id="password" minlength="6" required>
+               </div>
+               <div class="form-group">
+                  <label for="password_again">Confirm Password</label>
+                  <input type="password" class="form-control" name="password_again" id="password_again" required>
+               </div>
+               <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" name="name" id="name" value="<?php echo escape(Input::get('name')); ?>"
+                     minlength="2" maxlength="50" required>
+               </div>
 
-   <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-   <input type="submit" value="Register">
-   
-</form>
+               <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+               <input type="submit" class="form-control btn btn-primary" value="Register">
+            </form>
+         </div>
+      </div>
+      <div class="col-lg-4"></div>
+   </div>
+</div>
 
 <?php 
    include 'templates/footer.php';

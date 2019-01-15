@@ -6,7 +6,7 @@
          'host' => '127.0.0.1',
          'username' => 'server',
          'password' => '',
-         'db' => 'lr'
+         'db' => 'sti'
       ),
       'remember' => array(
          'cookie_name' => 'hash',
