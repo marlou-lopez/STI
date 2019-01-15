@@ -37,6 +37,9 @@
             <li class="nav-item">
                <a class="nav-link" href="#">Contact Us</a>
             </li>
+            <li class="nav-item">
+               <a class="nav-link" data-toggle="modal" data-target="#applicationModal">Application</a>
+            </li>
             <!-- Para makita username pag ka login, comment ko muna kase di naman need sa ngayon -->
             <?php //if($user->isLoggedIn()) : ?>
             <!-- <li class="nav-item">
@@ -46,7 +49,9 @@
             <?php //endif; ?>
          </ul>
          <?php if(!$user->isLoggedIn()) : ?>
-         <a href="http:login.php" class="btn btn-light">Login</a>
+         <button type="button" class="btn btn-light" data-toggle="modal" data-target="#loginModal">
+            Login
+         </button>
          <!--
             Ewan ko pa kung sang part magreregister, so baka tanggalin ko rin to
          -->
@@ -58,4 +63,54 @@
          <?php endif; ?>
       </div>
    </nav>
+   
 
+   <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLongTitle">Account Type</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="row">
+                  <div class="col-md-6">
+                     <a href="http:login_emp.php" class="btn btn-primary btn-block">Employee</a>
+                  </div>
+                  <div class="col-md-6">
+                     <a href="http:login_app.php" class="btn btn-primary btn-block">Applicant</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="modal fade" id="applicationModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLongTitle">Application</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="row">
+                  <div class="col-md-6">
+                     <p>New Application?</p>
+                     <a href="http:register_fsec.php" class="btn btn-primary btn-block">FSEC</a>
+                     <a href="http:register_fsic_o.php" class="btn btn-primary btn-block">FSIC - Occupancy</a>
+                     <a href="http:register_fsic_b.php" class="btn btn-primary btn-block">FSIC - Business</a>
+                  </div>
+                  <div class="col-md-6">
+                     <p>Renew Application?</p>
+                     <a href="#" class="btn btn-primary btn-block">FSEC - Business</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
